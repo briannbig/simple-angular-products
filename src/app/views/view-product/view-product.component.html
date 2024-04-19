@@ -9,6 +9,9 @@
   </div>
 </div>
 <div class="product-actions">
-  <button class="edit-button" (click)="editProduct()">Edit</button>
+    <a [routerLink]="['/edit-product', product?.sku]" class="edit-button">
+        Edit
+      </a>
+  
   <button class="delete-button" (click)="deleteProduct()">Delete</button>
 </div>

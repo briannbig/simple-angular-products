@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../core/models/product';
 import { ProductService } from '../../core/service/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-view-product',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterModule],
   templateUrl: './view-product.component.html',
   styleUrl: './view-product.component.css',
 })

@@ -45,6 +45,7 @@
     background-color: #000;
     margin-right: 10px; /* Add some space between the buttons */
     color: #fff;
+    text-decoration: none;
   }
   
   .delete-button {

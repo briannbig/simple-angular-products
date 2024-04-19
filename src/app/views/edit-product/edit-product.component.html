@@ -1,0 +1,158 @@
+<h1>Edit Product</h1>
+
+<form (ngSubmit)="onSubmit()" #productForm="ngForm">
+  <div class="form-container">
+    <div>
+      <label for="sku">SKU:</label>
+      <input
+        type="text"
+        name="sku"
+        id="sku"
+        [(ngModel)]="product!.sku"
+        required
+        minlength="3"
+        maxlength="10"
+      />
+      <div
+        *ngIf="
+          productForm.controls['sku'].invalid &&
+          (productForm.controls['sku'].dirty ||
+            productForm.controls['sku'].touched)
+        "
+        class="error"
+      >
+        <span *ngIf="productForm.controls['sku'].errors?.['required']"
+          >SKU is required.</span
+        >
+        <span *ngIf="productForm.controls['sku'].errors?.['minlength']"
+          >SKU must be at least 3 characters long.</span
+        >
+        <span *ngIf="productForm.controls['sku'].errors?.['maxlength']"
+          >SKU cannot be longer than 10 characters.</span
+        >
+      </div>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        [(ngModel)]="product!.name"
+        required
+        minlength="3"
+        maxlength="50"
+      />
+      <div
+        *ngIf="
+          productForm.controls['name'].invalid &&
+          (productForm.controls['name'].dirty ||
+            productForm.controls['name'].touched)
+        "
+        class="error"
+      >
+        <span *ngIf="productForm.controls['name'].errors?.['required']"
+          >Name is required.</span
+        >
+        <span *ngIf="productForm.controls['name'].errors?.['minlength']"
+          >Name must be at least 3 characters long.</span
+        >
+        <span *ngIf="productForm.controls['name'].errors?.['maxlength']"
+          >Name cannot be longer than 50 characters.</span
+        >
+      </div>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        name="description"
+        id="description"
+        [(ngModel)]="product!.description"
+        required
+        minlength="10"
+        maxlength="100"
+      ></textarea>
+      <div
+        *ngIf="
+          productForm.controls['description'].invalid &&
+          (productForm.controls['description'].dirty ||
+            productForm.controls['description'].touched)
+        "
+        class="error"
+      >
+        <span *ngIf="productForm.controls['description'].errors?.['required']"
+          >Description is required.</span
+        >
+        <span *ngIf="productForm.controls['description'].errors?.['minlength']"
+          >Description must be at least 10 characters long.</span
+        >
+        <span *ngIf="productForm.controls['description'].errors?.['maxlength']"
+          >Description cannot be longer than 100 characters.</span
+        >
+      </div>
+    </div>
+    <div>
+      <label for="category">Category:</label>
+      <select
+        name="category"
+        id="category"
+        [(ngModel)]="product!.category"
+        required
+      >
+        <option value="game">Video Game</option>['required
+        ['required
+        ['required
+        ['required
+        ['required
+        <option value="console">Console</option>
+      </select>
+      <div
+        *ngIf="
+          productForm.controls['category'].invalid &&
+          (productForm.controls['category'].dirty ||
+            productForm.controls['category'].touched)
+        "
+        class="error"
+      >
+        <span *ngIf="productForm.controls['category'].errors?.['required']"
+          >Category is required.</span
+        >
+      </div>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        [(ngModel)]="product!.price"
+        required
+        min="0.01"
+        step="0.01"
+      />
+      <div
+        *ngIf="
+          productForm.controls['price'].invalid &&
+          (productForm.controls['price'].dirty ||
+            productForm.controls['price'].touched)
+        "
+        class="error"
+      >
+        <span *ngIf="productForm.controls['price'].errors?.['required']"
+          >Price is required.</span
+        >
+        <span *ngIf="productForm.controls['price'].errors?.['min']"
+          >Price must be greater than 0.</span
+        >
+      </div>
+    </div>
+    <div>
+      <input
+        type="submit"
+        value="Save Changes"
+        [disabled]="!productForm.valid"
+      />
+      <input type="reset" value="Reset" />
+    </div>
+  </div>
+</form>
