@@ -1,5 +1,3 @@
-<a routerLink="/add-product"> Add product </a>
-
-<div *ngIf="products">
+<div class="table" *ngIf="products">
   <app-product-list [products]="products"></app-product-list>
 </div>

@@ -7,25 +7,25 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl: string = 'http://localhost:8080/products';
+  private baseUrl: string = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
   public getProducts() {
-    return this.http.get<Product[]>(this.baseUrl);
+      return this.http.get<Product[]>(`${this.baseUrl}/products`);
   }
 
   getAllProductsSortedBy(sortme: string): Observable<Product[]> {
-    const url = `${this.baseUrl}/sortby/${sortme}`;
+    const url = `${this.baseUrl}/products/sortby/${sortme}`;
     return this.http.get<Product[]>(url);
   }
 
-  getProductById(id: string) {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getProductBySku(sku: string) {
+    return this.http.get<Product>(`${this.baseUrl}/product/${sku}`);
   }
 
   public addProduct(product: Product) {
-    return this.http.post(this.baseUrl, product);
+    return this.http.post(`${this.baseUrl}/products`, product);
   }
 
   deleteProduct(id: string) {

@@ -3,10 +3,16 @@
     <th>SKU</th>
     <th>Product</th>
     <th>Price</th>
+    <th>Action</th>
   </tr>
   <tr *ngFor="let product of products">
     <td>{{ product.sku }}</td>
     <td>{{ product.name }}</td>
     <td>{{ product.price }}</td>
+    <td>
+      <a [routerLink]="['/view-product', product.sku]" class="btn">
+        View
+      </a>
+    </td>
   </tr>
 </table>

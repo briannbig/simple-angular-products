@@ -61,3 +61,12 @@ form {
     text-decoration: underline;
   }
   
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .error span {
+    display: block;
+    margin-top: 5px;
+  }

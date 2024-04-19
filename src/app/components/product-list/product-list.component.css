@@ -2,15 +2,27 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #dee9e9;
 }
 
 th,
 td {
     text-align: left;
-    padding: 16px;
+    padding: 6px;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: azure;
+}
+
+a {
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
 }
