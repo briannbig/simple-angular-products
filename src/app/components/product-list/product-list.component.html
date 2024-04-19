@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>SKU</th>
+    <th>Product</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.sku }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+  </tr>
+</table>

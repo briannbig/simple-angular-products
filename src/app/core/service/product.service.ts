@@ -10,7 +10,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  public getSavings() {
+  public getProducts() {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
