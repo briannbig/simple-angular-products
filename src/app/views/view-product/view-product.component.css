@@ -27,3 +27,32 @@
     font-size: 16px;
   }
   
+  .product-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .edit-button,
+  .delete-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #000;
+    margin-right: 10px; /* Add some space between the buttons */
+    color: #fff;
+  }
+  
+  .delete-button {
+    background-color: #a91616;
+    color: #fff;
+  }
+  
+  .edit-button:hover,
+  .delete-button:hover {
+    filter: brightness(0.8);
+  }

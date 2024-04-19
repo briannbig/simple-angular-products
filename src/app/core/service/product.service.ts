@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   public getProducts() {
-      return this.http.get<Product[]>(`${this.baseUrl}/products`);
+    return this.http.get<Product[]>(`${this.baseUrl}/products`);
   }
 
   getAllProductsSortedBy(sortme: string): Observable<Product[]> {
@@ -28,7 +28,11 @@ export class ProductService {
     return this.http.post(`${this.baseUrl}/products`, product);
   }
 
-  deleteProduct(id: string) {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+  public editProduct(product: Product) {
+    return this.http.post(`${this.baseUrl}/product`, product);
+  }
+
+  deleteProduct(sku: string) {
+    return this.http.delete(`${this.baseUrl}/product/${sku}`);
   }
 }

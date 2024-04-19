@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewProductComponent implements OnInit {
   productSku? = '';
-  product?: Product
+  product?: Product;
 
   constructor(
     private productService: ProductService,
@@ -25,5 +25,12 @@ export class ViewProductComponent implements OnInit {
     this.productService.getProductBySku(this.productSku!).subscribe((res) => {
       this.product = res;
     });
+  }
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.product!.sku);
+  }
+  editProduct() {
+    throw new Error('Method not implemented.');
   }
 }
