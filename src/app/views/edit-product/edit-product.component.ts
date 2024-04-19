@@ -33,6 +33,6 @@ export class EditProductComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // logic to update product details
+    this.productService.editProduct(this.product!);
   }
 }
