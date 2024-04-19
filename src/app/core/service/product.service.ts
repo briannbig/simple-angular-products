@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,11 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
+  getAllProductsSortedBy(sortme: string): Observable<Product[]> {
+    const url = `${this.baseUrl}/sortby/${sortme}`;
+    return this.http.get<Product[]>(url);
+  }
+
   getProductById(id: string) {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -25,5 +31,4 @@ export class ProductService {
   deleteProduct(id: string) {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
-
 }

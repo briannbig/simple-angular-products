@@ -1,0 +1,50 @@
+<h1>Add A Product</h1>
+
+<form (ngSubmit)="onSubmit()" #productForm="ngForm">
+  <p><a href="/">Product List</a></p>
+  <table cellspacing="0" cellpadding="10">
+    <tr>
+      <td><span id="skuLabel">SKU: </span></td>
+      <td>
+        <input type="text" name="sku" [(ngModel)]="product.sku" required />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <span id="descLabel">Description: </span
+        ><textarea
+          name="description"
+          [(ngModel)]="product.description"
+          required
+        ></textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <td><span id="catLabel">Category: </span></td>
+      <td>
+        <select name="category" [(ngModel)]="product.category" required>
+          <option value="game">Video Game</option>
+          <option value="console" selected>Console</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><span id="priceLabel">Price: </span></td>
+      <td>
+        <input type="text" name="price" [(ngModel)]="product.price" required />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input
+          type="submit"
+          value="Add Product"
+          [disabled]="!productForm.valid"
+        />
+        <input type="reset" value="Reset" />
+      </td>
+    </tr>
+  </table>
+  <p><a href="/">Product List</a></p>
+</form>
